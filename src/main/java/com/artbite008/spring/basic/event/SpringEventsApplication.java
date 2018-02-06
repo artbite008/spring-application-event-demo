@@ -1,4 +1,4 @@
-package com.artbite008.spring;
+package com.artbite008.spring.basic.event;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

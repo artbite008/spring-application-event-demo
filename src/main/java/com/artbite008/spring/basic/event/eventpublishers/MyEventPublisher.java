@@ -1,7 +1,7 @@
-package com.artbite008.spring.eventpublishers;
+package com.artbite008.spring.basic.event.eventpublishers;
 
-import com.artbite008.spring.events.BarEvent;
-import com.artbite008.spring.events.FooEvent;
+import com.artbite008.spring.basic.event.events.BarEvent;
+import com.artbite008.spring.basic.event.events.FooEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -38,7 +38,6 @@ public class MyEventPublisher implements ApplicationEventPublisherAware {
     }
 
 
-    @Override
     public void setApplicationEventPublisher(final ApplicationEventPublisher inApplicationEventPublisher) {
         mApplicationEventPublisher = inApplicationEventPublisher;
     }

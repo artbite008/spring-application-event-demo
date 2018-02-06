@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx" 
+    xmlns:task="http://www.springframework.org/schema/task" 
+    xmlns:util="http://www.springframework.org/schema/util" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+        http://www.springframework.org/schema/task 
+        http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<task:scheduler id="TransactionScheduler" pool-size="5"/>
+	<task:executor id="TaskExecutor" pool-size="5"/>
+	
+	
+	<bean id="ApplicationEventHandler" class="com.artbite008.spring.event.handler.ApplicationEventHandler">
+    	<property name="processorMap" ref="EventProcessorMap"></property>
+	</bean>
+
+	
+	<util:map id="EventProcessorMap">
+		<!--entry key="*" value-ref="defaultProcessors" /-->
+		<entry key="DesignFile-Convert" value-ref="convertProcessors" />
+	</util:map>
+
+
+	<util:list id="convertProcessors">
+		<ref bean="convertEventHandler" />
+	</util:list>
+
+
+	<bean id="convertEventHandler" class="com.artbite008.spring.event.handler.FileConvertHandler">
+	</bean>
+
+	
+</beans>

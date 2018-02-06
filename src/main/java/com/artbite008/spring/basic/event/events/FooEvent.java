@@ -1,4 +1,4 @@
-package com.artbite008.spring.events;
+package com.artbite008.spring.basic.event.events;
 
 import org.springframework.context.ApplicationEvent;
 

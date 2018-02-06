@@ -1,4 +1,4 @@
-package com.artbite008.spring.listeners;
+package com.artbite008.spring.basic.event.listeners;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
-package com.artbite008.spring.listeners;
+package com.artbite008.spring.basic.event.listeners;
 
-import com.artbite008.spring.events.BarEvent;
-import com.artbite008.spring.events.FooEvent;
+import com.artbite008.spring.basic.event.events.BarEvent;
+import com.artbite008.spring.basic.event.events.FooEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
